@@ -32,23 +32,19 @@
     <script>
      
         function getCd() { 
-            fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem")
-            let request = require("request")
-            let options = {
-            method: 'GET',
-            headers:  {
-          "x-rapidapi-key":"4a7bc0b5e2msh5f13530c6ecdfa0p15e797jsn95497b43e",
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-        }
-    }
-  
-                .then(response => response.json())
-                .then(data => {
-                    displayCds(data)
-                })
-                .catch(err => {
-                    console.error(err)
-                })
+            fetch("https://deezerdevs-deezer.p.rapidapi.com/radio/%7Bid%7D", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "f807b1afacmshb1c5085d59d275bp121a65jsn27df22b947a6",
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
 
             console.log("printing a message")
         }
